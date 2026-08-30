@@ -154,26 +154,9 @@ function buildSeed() {
     ...o,
   });
 
-  const materials = [
-    mat({ codigo_interno: "EPI-001", nome: "Luva nitrílica", categoria: "EPI", subcategoria: "Luvas", unidade: "PAR", ca: "12345", validade_ca: "2027-03-01", estoque_atual: 310, estoque_minimo: 200, estoque_maximo: 800, valor_unitario: 6.9 }),
-    mat({ codigo_interno: "EPI-002", nome: "Capacete de segurança classe B", categoria: "EPI", subcategoria: "Capacete", unidade: "UN", ca: "31469", validade_ca: "2026-09-15", estoque_atual: 42, estoque_minimo: 30, estoque_maximo: 100, valor_unitario: 38.5 }),
-    mat({ codigo_interno: "EPI-003", nome: "Protetor auricular tipo plug", categoria: "EPI", subcategoria: "Protetor auricular", unidade: "PAR", ca: "5674", validade_ca: "2027-01-10", estoque_atual: 620, estoque_minimo: 400, estoque_maximo: 1500, valor_unitario: 1.2 }),
-    mat({ codigo_interno: "EPI-004", nome: "Respirador semifacial PFF2", categoria: "EPI", subcategoria: "Respirador", unidade: "UN", ca: "38921", validade_ca: "2026-10-05", estoque_atual: 18, estoque_minimo: 25, estoque_maximo: 150, valor_unitario: 9.4 }),
-    mat({ codigo_interno: "EPI-005", nome: "Botina de segurança com bico PVC", categoria: "EPI", subcategoria: "Botina", unidade: "PAR", ca: "40211", validade_ca: "2027-06-20", estoque_atual: 65, estoque_minimo: 40, estoque_maximo: 150, valor_unitario: 79.9, tamanho: "Diversos" }),
-    mat({ codigo_interno: "FER-001", nome: "Mangueira de alta pressão 2 1/2\"", categoria: "Ferramentas", subcategoria: "Mangueira", unidade: "M", estoque_atual: 143, estoque_minimo: 100, estoque_maximo: 400, valor_unitario: 24.0, tipo_item: "consumivel" }),
-    mat({ codigo_interno: "FER-002", nome: "Lavadora de alta pressão industrial", categoria: "Ferramentas", subcategoria: "Ferramentas manuais", unidade: "UN", estoque_atual: 6, estoque_minimo: 2, estoque_maximo: 10, valor_unitario: 3200, tipo_item: "ferramenta", status_ferramenta: "Disponível" }),
-    mat({ codigo_interno: "FER-003", nome: "Marreta 5kg", categoria: "Ferramentas", subcategoria: "Marreta", unidade: "UN", estoque_atual: 9, estoque_minimo: 4, estoque_maximo: 15, valor_unitario: 65, tipo_item: "ferramenta", status_ferramenta: "Disponível" }),
-    mat({ codigo_interno: "MOP-001", nome: "Detergente alcalino clorado", categoria: "Materiais Operacionais", subcategoria: "Produtos químicos", unidade: "L", estoque_atual: 210, estoque_minimo: 150, estoque_maximo: 600, valor_unitario: 11.3 }),
-    mat({ codigo_interno: "MOP-002", nome: "Abraçadeira inox 3\"", categoria: "Materiais Operacionais", subcategoria: "Abraçadeiras", unidade: "UN", estoque_atual: 340, estoque_minimo: 200, estoque_maximo: 1000, valor_unitario: 3.1 }),
-  ];
+ const materials = [];
 
-  const employees = [
-    { id: uid("FUNC"), nome: "José Silva", matricula: "123456", funcao: "Auxiliar de Serviços Gerais", area: "Mina", turno: "Turno A" },
-    { id: uid("FUNC"), nome: "Carlos Mendes", matricula: "123789", funcao: "Técnico de Limpeza Industrial", area: "Usina", turno: "Turno B" },
-    { id: uid("FUNC"), nome: "Maria Souza", matricula: "124001", funcao: "Supervisora Operacional", area: "Usina", turno: "Turno A" },
-    { id: uid("FUNC"), nome: "João Pereira", matricula: "124055", funcao: "Auxiliar de Serviços Gerais", area: "Oficina", turno: "Turno C" },
-  ];
-
+const employees = [];
   const costCenters = [
     { id: uid("CC"), codigo: "CC-MINA-01", nome: "Operação Mina" },
     { id: uid("CC"), codigo: "CC-USINA-01", nome: "Operação Usina" },
@@ -181,11 +164,7 @@ function buildSeed() {
     { id: uid("CC"), codigo: "CC-ADM-01", nome: "Administrativo" },
   ];
 
-  const suppliers = [
-    { id: uid("FORN"), nome: "Proteção Total EPIs Ltda", cnpj: "12.345.678/0001-90", contato: "(94) 3321-1000" },
-    { id: uid("FORN"), nome: "Industrial Clean Distribuidora", cnpj: "98.765.432/0001-11", contato: "(94) 3321-2200" },
-    { id: uid("FORN"), nome: "FerraMax Equipamentos", cnpj: "45.678.912/0001-33", contato: "(94) 3321-3300" },
-  ];
+ const suppliers = [];
 
   const users = [
     { id: uid("USR"), nome: "Romulo Ferreira", email: "admin@limpezaindustrial.com", senha: "admin123", perfil: "admin", bloqueado: false },
@@ -199,21 +178,13 @@ function buildSeed() {
   const mv = (o) => ({ id: uid("MOV"), timestamp: nowStamp(), status: "Concluída", ...o });
   const daysAgo = (n) => { const d = new Date(); d.setDate(d.getDate() - n); return iso(d); };
 
-  const luva = materials[0];
-  const movements = [
-    mv({ tipo: "entrada", material_id: luva.id, material_nome: luva.nome, quantidade_anterior: 270, quantidade: 80, quantidade_final: 350, usuario: "João Silva", fornecedor: "Proteção Total EPIs Ltda", nf: "45210", pedido: "PC-9910", valor_unitario: 6.9, lote: "L2026-08", validade: "2028-01-01", responsavel_recebimento: "João Silva", local_armazenamento: "Almoxarifado Central", observacao: "Reposição mensal", timestamp: daysAgo(20) }),
-    mv({ tipo: "saida", material_id: luva.id, material_nome: luva.nome, quantidade_anterior: 350, quantidade: 40, quantidade_final: 310, usuario: "João Silva", area_destino: "Usina", centro_custo: "CC-USINA-01", colaborador: "Carlos Mendes", matricula: "123789", empresa: "Própria", supervisor: "Maria Souza", turno: "Turno B", motivo: "Entrega programada de EPI", responsavel_entrega: "João Silva", ca: "12345", data_entrega: daysAgo(9), timestamp: daysAgo(9) }),
-    mv({ tipo: "saida", material_id: materials[7].id, material_nome: materials[7].nome, quantidade_anterior: 12, quantidade: 3, quantidade_final: 9, usuario: "João Silva", area_destino: "Oficina", centro_custo: "CC-OFICINA-01", colaborador: "João Pereira", matricula: "124055", empresa: "Própria", supervisor: "Maria Souza", turno: "Turno C", motivo: "Uso operacional", responsavel_entrega: "João Silva", timestamp: daysAgo(15) }),
-    mv({ tipo: "danificado", material_id: materials[5].id, material_nome: materials[5].nome, quantidade_anterior: 150, quantidade: 7, quantidade_final: 143, usuario: "João Silva", area: "Usina", motivo: "Ruptura por abrasão", descricao_dano: "Mangueira rompida próxima ao engate", supervisor: "Maria Souza", destino: "Descarte", timestamp: daysAgo(6) }),
-  ];
-
+const movements = [];
   return {
     materials, employees, costCenters, suppliers, users, movements,
     categories: CATEGORIES_SEED, areas: AREAS_SEED, locations: LOCATIONS_SEED,
-    toolLoans: [], inventoryCounts: [], auditLog: [
-      { id: uid("LOG"), timestamp: daysAgo(30), usuario: "Sistema", tela: "Sistema", acao: "Base inicial carregada (dados de demonstração).", de: "", para: "" },
-    ],
-  };
+   toolLoans: [], inventoryCounts: [], auditLog: [],
+  
+ 
 }
 
 /* ============================== UI ATOMS ============================== */

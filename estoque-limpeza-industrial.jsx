@@ -447,7 +447,9 @@ function LoginPage({ users, onLogin }) {
               <label style={{ fontSize: 12.5, color: C.inkMuted, display: "flex", alignItems: "center", gap: 6, cursor: "pointer" }}>
                 <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} /> Manter conectado
               </label>
-              <a href="#" onClick={(e) => { e.preventDefault(); setErr("Um link de recuperação seria enviado ao e-mail cadastrado."); }}>Esqueci minha senha</a>    
+        
+              <a href="#" onClick={(e) => { e.preventDefault(); setErr("Um link de recuperação seria enviado ao e-mail cadastrado."); }}>Esqueci minha senha</a> 
+              </div>
              {err ? <div>{err}</div> : null} 
               <Btn type="submit" full icon={ScanLine}>Entrar</Btn>
           </form>

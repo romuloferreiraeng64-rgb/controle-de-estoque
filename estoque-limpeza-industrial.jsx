@@ -537,24 +537,13 @@ function Sidebar({ user, page, setPage, mobileOpen, setMobileOpen }) {
   src={logoEmpresa}
   alt="Top Service"
   style={{
-    width: "100%",
-    maxWidth: "220px",
+    width: "210px",
     height: "90px",
     objectFit: "contain",
-    objectPosition: "center",
     display: "block"
   }}
 />
-    src={logoEmpresa}
-    alt="Logo"
-    style={{
-      maxWidth: "190px",
-      maxHeight: "70px",
-      width: "auto",
-      height: "auto",
-      objectFit: "contain"
-    }}
-  />
+ 
 </div>
 
 <nav style={{ padding: "10px 8px", flex: 1 }}>

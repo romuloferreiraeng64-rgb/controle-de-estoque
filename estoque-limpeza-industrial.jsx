@@ -448,8 +448,8 @@ function LoginPage({ users, onLogin }) {
                 <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} /> Manter conectado
               </label>
               <a href="#" onClick={(e) => { e.preventDefault(); setErr("Um link de recuperação seria enviado ao e-mail cadastrado."); }}>Esqueci minha senha</a>    
-              {err ? <div style={{ background: C.redBg, border: `1px solid ${C.redBorder}`, color: C.red, borderRadius: 6, padding: "8px 10px", fontSize: 12.5, marginBottom: 14 }}>{err}</div> : null}
-            <Btn type="submit" full icon={ScanLine}>Entrar</Btn>
+             {err ? <div>{err}</div> : null} 
+              <Btn type="submit" full icon={ScanLine}>Entrar</Btn>
           </form>
           
         </div>

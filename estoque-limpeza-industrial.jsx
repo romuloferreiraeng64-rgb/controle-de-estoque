@@ -524,14 +524,25 @@ function Sidebar({ user, page, setPage, mobileOpen, setMobileOpen }) {
       position: "sticky", top: 0, overflowY: "auto", display: "flex", flexDirection: "column",
       transform: mobileOpen ? "translateX(0)" : undefined,
     }} className="sidebar">
-      <div style={{ padding: "18px 16px", borderBottom: "1px solid rgba(255,255,255,0.12)", display: "flex", alignItems: "center", gap: 10 }}>
-        <div style={{ width: 34, height: 34, borderRadius: 8, background: C.steel, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <ShieldCheck size={18} color="#fff" />
-        </div>
-        <div>
-          <div className="display" style={{ fontWeight: 800, fontSize: 16, lineHeight: 1.05 }}>ESTOQUE LI</div>
-          <div style={{ fontSize: 10, color: "rgba(255,255,255,0.55)", letterSpacing: "0.05em" }}>LIMPEZA INDUSTRIAL</div>
-        </div>
+     <div style={{
+  padding: "18px 16px",
+  borderBottom: "1px solid rgba(255,255,255,0.12)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center"
+}}>
+  <img
+    src="/download (2).jpg"
+    alt="Logo"
+    style={{
+      maxWidth: "190px",
+      maxHeight: "70px",
+      width: "auto",
+      height: "auto",
+      objectFit: "contain"
+    }}
+  />
+</div>
       </div>
       <nav style={{ padding: "10px 8px", flex: 1 }}>
         {MENU.filter((m) => hasAccess(user, m.perm)).map((m, i) => {

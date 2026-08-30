@@ -545,8 +545,9 @@ function Sidebar({ user, page, setPage, mobileOpen, setMobileOpen }) {
     }}
   />
 </div>
-      </div>
-      <nav style={{ padding: "10px 8px", flex: 1 }}>
+
+<nav style={{ padding: "10px 8px", flex: 1 }}>
+     
         {MENU.filter((m) => hasAccess(user, m.perm)).map((m, i) => {
           if (!m.group) {
             const Icon = m.icon;

@@ -186,7 +186,7 @@ function buildSeed() {
   ];
 
   const users = [
-    { id: uid("USR"), nome: "Ana Ribeiro", email: "admin@limpezaindustrial.com", senha: "admin123", perfil: "admin", bloqueado: false },
+    { id: uid("USR"), nome: "Romulo Ferreira", email: "admin@limpezaindustrial.com", senha: "admin123", perfil: "admin", bloqueado: false },
     { id: uid("USR"), nome: "Bruno Castro", email: "gestor@limpezaindustrial.com", senha: "gestor123", perfil: "gestor", bloqueado: false },
     { id: uid("USR"), nome: "João Silva", email: "almoxarife@limpezaindustrial.com", senha: "almox123", perfil: "almoxarife", bloqueado: false },
     { id: uid("USR"), nome: "Fernanda Lima", email: "consulta@limpezaindustrial.com", senha: "consulta123", perfil: "consulta", bloqueado: false },

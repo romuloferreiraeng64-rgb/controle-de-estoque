@@ -11,7 +11,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from "recharts";
 
-import logoEmpresa from "./download (2).jpg";
+import logoEmpresa from "./Top_Service_Company-logo-E619BA1EC1-seeklogo.com (1).png";
 
 /* ============================== DESIGN TOKENS ============================== */
 const C = {

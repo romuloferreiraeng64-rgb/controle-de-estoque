@@ -527,13 +527,24 @@ function Sidebar({ user, page, setPage, mobileOpen, setMobileOpen }) {
       transform: mobileOpen ? "translateX(0)" : undefined,
     }} className="sidebar">
      <div style={{
-  padding: "18px 16px",
+  padding: "12px 12px",
   borderBottom: "1px solid rgba(255,255,255,0.12)",
   display: "flex",
   alignItems: "center",
   justifyContent: "center"
 }}>
   <img
+  src={logoEmpresa}
+  alt="Top Service"
+  style={{
+    width: "100%",
+    maxWidth: "220px",
+    height: "90px",
+    objectFit: "contain",
+    objectPosition: "center",
+    display: "block"
+  }}
+/>
     src={logoEmpresa}
     alt="Logo"
     style={{

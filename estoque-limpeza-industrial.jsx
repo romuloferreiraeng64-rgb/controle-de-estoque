@@ -452,9 +452,6 @@ function LoginPage({ users, onLogin }) {
             <Btn type="submit" full icon={ScanLine}>Entrar</Btn>
           </form>
           
-              </div>
-            ))}
-          </div>
         </div>
       </div>
       <style>{`@media (max-width: 800px) { .login-grid { grid-template-columns: 1fr !important; } }`}</style>

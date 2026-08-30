@@ -11,6 +11,8 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from "recharts";
 
+import logoEmpresa from "./download (2).jpg";
+
 /* ============================== DESIGN TOKENS ============================== */
 const C = {
   bg: "#EEF1F4",
@@ -91,8 +93,8 @@ const fmtMoney = (v) => (Number(v) || 0).toLocaleString("pt-BR", { style: "curre
 const daysBetween = (a, b) => Math.round((new Date(b) - new Date(a)) / 86400000);
 
 function classifyStock(m) {
-  const atual = Number(m.estoque_atual) || 0;
-  const min = Number(m.estoque_minimo) || 0;
+  const atual = Number(m._atual) || 0;
+  const min = Number(m._minimo) || 0;
   if (atual <= min) return "critico";
   if (atual <= min * 1.2) return "atencao";
   return "normal";
@@ -139,7 +141,7 @@ function buildSeed() {
     ca: "",
     validade_ca: "",
     localizacao: "Almoxarifado Central",
-    estoque_maximo: 0,
+    _maximo: 0,
     ponto_reposicao: 0,
     valor_unitario: 0,
     foto: "",
@@ -532,7 +534,7 @@ function Sidebar({ user, page, setPage, mobileOpen, setMobileOpen }) {
   justifyContent: "center"
 }}>
   <img
-    src="/download (2).jpg"
+    src={logoEmpresa}
     alt="Logo"
     style={{
       maxWidth: "190px",

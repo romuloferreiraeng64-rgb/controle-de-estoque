@@ -1613,9 +1613,11 @@ function AdminLogs({ auditLog }) {
           ))}</tbody>
         </table>
       </Card>
-    </div>
+          </div>
   );
 }
+  
+
 
 /* ============================== APP ROOT ============================== */
 const STORAGE_KEY = "estoque_li_v1";

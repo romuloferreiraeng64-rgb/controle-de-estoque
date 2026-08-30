@@ -452,13 +452,7 @@ function LoginPage({ users, onLogin }) {
             {err ? <div style={{ background: C.redBg, border: `1px solid ${C.redBorder}`, color: C.red, borderRadius: 6, padding: "8px 10px", fontSize: 12.5, marginBottom: 14 }}>{err}</div> : null}
             <Btn type="submit" full icon={ScanLine}>Entrar</Btn>
           </form>
-          <div style={{ marginTop: 22, background: C.surfaceAlt, border: `1px solid ${C.border}`, borderRadius: 8, padding: 12 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: C.inkFaint, textTransform: "uppercase", marginBottom: 6 }}>Usuários de demonstração</div>
-            {demo.map((d) => (
-              <div key={d[1]} style={{ display: "flex", justifyContent: "space-between", fontSize: 11.5, color: C.inkMuted, padding: "2px 0", cursor: "pointer" }}
-                onClick={() => { setEmail(d[1]); setSenha(d[2]); }}>
-                <span><b style={{ color: C.ink }}>{d[0]}</b></span>
-                <span className="mono">{d[1]} / {d[2]}</span>
+          
               </div>
             ))}
           </div>
